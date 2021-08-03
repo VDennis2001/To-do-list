@@ -1,0 +1,102 @@
+
+<!-- <html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/index.css">
+
+    </head>
+    <body>
+        <h1>ToDo List</h1>
+
+        <div>
+            <div>
+                <ul>
+                    <% for ( let i of TO_DO_LIST) { %>
+                        <li>
+                            <div>
+                            <p><%= i.Description %></p>
+                            <p><%= i.Category %></p>
+                            <p><%= i.Date %></p>
+                            </div>
+                            <div class="delete-button">
+                                <a href="/remove-task/<%= i.Description %>">
+                                    <button type="submit">Delete</button>
+                                </a> 
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+
+            <form action="/create_task" method="POST">
+                <input type="text" name="Description " required>
+                <input type = "string" name="Category" id="browser" required>
+                        <datalist id="browsers">
+                            <option value="Edge">
+                            <option value="Firefox">
+                            <option value="Chrome">
+                            <option value="Opera">
+                            <option value="Safari">
+                        </datalist>
+                <input type="date" name="Date" required>
+
+                <button type="submit">ADD TASK</button>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="/js/index.js"></script>
+    </body>
+</html> -->
+
+
+
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <h1>ToDo List</h1>
+
+    <div>
+      <div>
+        <ul>
+          <% for ( let i of TO_DO_LIST) { %>
+          <li>
+            <div>
+              <p><%= i.Description %></p>
+              <p><%= i.Category %></p>
+              <p><%= i.Date %></p>
+            </div>
+            <div class="delete-button">
+              <a href="/remove-task/?id=<%= i._id %>">
+                <button type="submit">Delete</button>
+              </a>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+
+      <form action="/create_task" method="POST">
+        <input type="text" name="Description" required />
+        <input type="string" name="Category" id="browser" required />
+        <datalist id="browsers">
+          <option value="Edge"></option>
+          <option value="Firefox"></option>
+          <option value="Chrome"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+        </datalist>
+
+        <input type="date" name="Date" required />
+
+        <button type="submit">ADD TASK</button>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="/js/index.js"></script>
+  </body>
+</html>
