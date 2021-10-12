@@ -1,79 +1,35 @@
 
-<!-- <html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
-        <link rel="stylesheet" href="/css/index.css">
-
-    </head>
-    <body>
-        <h1>ToDo List</h1>
-
-        <div>
-            <div>
-                <ul>
-                    <% for ( let i of TO_DO_LIST) { %>
-                        <li>
-                            <div>
-                            <p><%= i.Description %></p>
-                            <p><%= i.Category %></p>
-                            <p><%= i.Date %></p>
-                            </div>
-                            <div class="delete-button">
-                                <a href="/remove-task/<%= i.Description %>">
-                                    <button type="submit">Delete</button>
-                                </a> 
-                            </div>
-                        </li>
-                    <% } %>
-                </ul>
-            </div>
-
-            <form action="/create_task" method="POST">
-                <input type="text" name="Description " required>
-                <input type = "string" name="Category" id="browser" required>
-                        <datalist id="browsers">
-                            <option value="Edge">
-                            <option value="Firefox">
-                            <option value="Chrome">
-                            <option value="Opera">
-                            <option value="Safari">
-                        </datalist>
-                <input type="date" name="Date" required>
-
-                <button type="submit">ADD TASK</button>
-            </form>
-        </div>
-
-        <script type="text/javascript" src="/js/index.js"></script>
-    </body>
-</html> -->
-
-
-
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <h1>ToDo List</h1>
+    <div id="main">
 
-    <div>
-      <div>
-        <ul>
+    <div id="heading">
+    <h1>ToDo List</h1>
+    </div>
+
+   
+      <div id="info">
+        <ul id="list-of-information">
           <% for ( let i of TO_DO_LIST) { %>
           <li>
-            <div>
+            <div id="information">
               <p><%= i.Description %></p>
               <p><%= i.Category %></p>
               <p><%= i.Date %></p>
             </div>
-            <div class="delete-button">
+            <div class="delete-button" >
               <a href="/remove-task/?id=<%= i._id %>">
-                <button type="submit">Delete</button>
+                <button type="submit" id="delete_button" >
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                        &nbsp; DELETE TASKS
+                </button>
               </a>
+
             </div>
           </li>
           <% } %>
@@ -81,20 +37,43 @@
       </div>
 
       <form action="/create_task" method="POST">
-        <input type="text" name="Description" required />
-        <input type="string" name="Category" id="browser" required />
-        <datalist id="browsers">
-          <option value="Edge"></option>
-          <option value="Firefox"></option>
-          <option value="Chrome"></option>
-          <option value="Opera"></option>
-          <option value="Safari"></option>
-        </datalist>
+      <div id="description-container">
+             <label style="font-size: large;">DESCRIPTION</label>
+             <input type="text" name="Description" class="browser" placeholder="What do you need to do?" id="description" required />
+      </div>
 
-        <input type="date" name="Date" required />
+      <div class="mid-container">
 
-        <button type="submit">ADD TASK</button>
+                              <div id="category-container">
+
+                                <local id="choose-category" style="font-size: large;"> CATEGORY </local>
+
+                                <select name="category" id="category-input">
+                                    <option style="display:none">Click here</option>
+                                    <option value="personal">Personal</option>
+                                    <option value="work">Work</option>
+                                    <option value="school">School</option>
+                                    <option value="cleaning">Cleaning</option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                            </div>
+
+                            <div id="due-date-container">
+                              <label style="font-size: large;">DUE DATE</label>
+                            <input type="date" id="due-date-container" name="Date" required />
+                          </div>
+
+      </div>
+
+        <button type="submit" class="add-button">
+          <i class="fa fa-plus" aria-hidden="true"></i> 
+                        &nbsp; ADD TASK
+        </button>
       </form>
+      </div>
+      
+    </div>
     </div>
 
     <script type="text/javascript" src="/js/index.js"></script>

@@ -1,4 +1,135 @@
 body{
     text-align: center;
-    background-color: bisque;
+    /* height: 600px;
+    width: 100vw; */
+    background: black;
+    overflow: scroll;
+    background: #C33764;  /* fallback colour. Make sure this is just one solid colour. */
+    background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("background_2.jpg");
+    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("background_2.jpg");
+
+    
+}
+
+/* Outlet of the box */
+
+#main{
+
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin: auto;
+    width: 50%;
+    border: 3px solid;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+
+/* Heading of todo list */
+#heading{
+    border-style: groove;
+    border-width:5px;  
+    border-radius: 8%;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: brown;
+    margin: 0;
+    margin: 10px;
+}
+
+#information{
+    text-align: left;
+}
+
+#list-of-information{
+    list-style: none;
+}
+/* Form part */
+
+/* Description part */
+
+#description-container{
+    border-top: 1px solid;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+#category-container{
+    width: 50%;
+    border-top: 1px transparent;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin-left: 4%;
+}
+
+
+#due-date-container{
+    width: 53%;
+    border: 1px transparent;
+    /* border-bottom: 1px solid #d7d7d7; */
+    padding: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+#description-container label, #due-date-container label, #category-container label{
+    display: inline;
+    font-size: 0.9rem;
+    font-family: Cambria, 'Times New Roman', serif;
+}
+
+
+#description-container label {
+    padding-left: 2px;
+    padding-bottom: 5px;
+}
+
+/* About container */
+
+#description{
+    width: 75%;
+    border: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: 1;
+    font-family:'Times New Roman', serif;
+}
+
+#category-input{
+    width: 75%;
+    border: 1px;
+    background-color: white;
+    font-size: 1rem;
+    opacity: 1;
+    font-family:'Times New Roman', serif;
+}
+
+
+
+
+
+.mid-container{
+    display: flex;
+}
+
+/* buttons */
+
+.add-button{
+    margin-top: 5%;
+    background-color: rgb(255, 136, 0);
+    padding: 2%;
+}
+
+#delete_button{
+    background-color: rgb(255, 136, 0);
+    padding: 2%;
+    position: relative;
+    left: -3%;
 }

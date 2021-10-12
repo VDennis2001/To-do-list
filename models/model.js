@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose');  //require the library
 
-const TaskSchema =  new mongoose.Schema({
+const TaskSchema =  new mongoose.Schema({  //all the data information which will be filled in the form
 
     Description: {
         type: String,
